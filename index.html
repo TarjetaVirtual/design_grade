@@ -213,6 +213,507 @@ h2.t em{font-style:italic;color:var(--oro)}
 @keyframes late{50%{opacity:.4}}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}.pol.rev{transform:var(--r)}}
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVE PARA TODOS LOS DISPOSITIVOS
+   ========================================== */
+
+/* Configuración general */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.web {
+    width: 100%;
+    max-width: 500px;
+    min-width: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: calc(90px + env(safe-area-inset-bottom));
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    min-width: 0;
+}
+
+/* HERO adaptable */
+.hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: 100svh;
+    padding:
+        max(24px, env(safe-area-inset-top))
+        clamp(16px, 5vw, 26px)
+        35px;
+}
+
+.big-year {
+    font-size: clamp(5rem, 27vw, 9.5rem);
+    line-height: .9;
+    margin-top: 18px;
+}
+
+.hero-foto {
+    width: calc(100% - 20px);
+    min-height: 0;
+    height: auto;
+    flex: 1;
+    margin: -35px 5px 0 15px;
+    max-height: 65vh;
+    max-height: 65svh;
+    border-radius: 180px 180px 10px 10px;
+}
+
+.hero-name {
+    margin-top: -75px;
+    margin-left: 0;
+}
+
+.hero-name h1 {
+    font-size: clamp(3rem, 15vw, 5rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+}
+
+.hero-name small {
+    font-size: clamp(.52rem, 2.5vw, .64rem);
+}
+
+.hero .tag {
+    font-size: clamp(.52rem, 2.5vw, .64rem);
+    letter-spacing: .22em;
+}
+
+.scroll {
+    margin-top: 20px;
+}
+
+/* Títulos */
+h2.t {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    overflow-wrap: break-word;
+}
+
+.tag {
+    letter-spacing: .22em;
+}
+
+/* Fecha */
+.fgrid .n {
+    font-size: clamp(6rem, 27vw, 8.5rem);
+}
+
+.fgrid .r {
+    font-size: .72rem;
+    letter-spacing: .16em;
+}
+
+.cal {
+    width: 100%;
+    padding: 12px 5px;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.cal > div {
+    min-width: 0;
+    line-height: 34px;
+    font-size: .78rem;
+}
+
+.cal .d {
+    font-size: .48rem;
+}
+
+/* Cuenta regresiva */
+.cuenta {
+    padding: 32px 10px;
+}
+
+.cg {
+    width: 100%;
+}
+
+.cg div {
+    min-width: 0;
+    font-size: clamp(1.65rem, 8vw, 2.6rem);
+}
+
+.cg small {
+    font-size: clamp(.40rem, 2vw, .5rem);
+    letter-spacing: .12em;
+}
+
+/* Fotografías polaroid */
+.pols {
+    width: 100%;
+    height: clamp(410px, 125vw, 520px);
+    overflow: hidden;
+}
+
+.pol {
+    max-width: 62%;
+}
+
+.p1 {
+    width: 53%;
+    height: 46%;
+    left: 5%;
+    top: 0;
+}
+
+.p2 {
+    width: 49%;
+    height: 43%;
+    right: 4%;
+    top: 18%;
+}
+
+.p3 {
+    width: 52%;
+    height: 45%;
+    left: 20%;
+    top: 52%;
+}
+
+/* Tickets */
+.tickets {
+    padding: 25px clamp(12px, 4vw, 20px);
+}
+
+.tk-top {
+    padding: 20px 14px;
+    gap: 8px;
+}
+
+.tk-top .ci {
+    width: clamp(42px, 13vw, 58px);
+    height: clamp(42px, 13vw, 58px);
+    font-size: 1.4rem;
+}
+
+.tk-top div.x {
+    margin-left: 5px;
+    min-width: 0;
+}
+
+.tk-top h3 {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+}
+
+.tk-top small {
+    font-size: .48rem;
+    letter-spacing: .18em;
+}
+
+.tk-top .hr {
+    font-size: clamp(.8rem, 4vw, 1.1rem);
+    flex: none;
+}
+
+.tk-bot {
+    padding: 20px 12px;
+}
+
+.tk-bot .lugar {
+    font-size: .68rem;
+    overflow-wrap: anywhere;
+}
+
+.tk-bot .dir {
+    font-size: .95rem;
+}
+
+/* Itinerario */
+.hs {
+    width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.it {
+    width: clamp(135px, 40vw, 150px);
+}
+
+/* Vestimenta */
+.vh {
+    padding: 35px 8px 28px;
+}
+
+.vh .ic {
+    width: clamp(45px, 14vw, 74px);
+    height: clamp(45px, 14vw, 74px);
+    font-size: 3.5rem;
+}
+
+.vtxt {
+    padding: 28px 18px;
+}
+
+/* Galería */
+.gs {
+    width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.gi {
+    width: clamp(180px, 60vw, 220px);
+    height: clamp(240px, 82vw, 300px);
+}
+
+/* Tarjetas */
+.rg {
+    padding: 26px 16px;
+    width: 100%;
+}
+
+.rg p {
+    font-size: .94rem;
+}
+
+/* QR */
+.qr {
+    width: min(180px, 55vw);
+    height: min(180px, 55vw);
+}
+
+/* Imagen final */
+.fin {
+    width: 100%;
+    height: clamp(420px, 125vw, 560px);
+}
+
+/* Reproductor */
+.dock {
+    width: calc(100% - 24px);
+    max-width: 420px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.disc {
+    width: 38px;
+    height: 38px;
+}
+
+.play,
+.sug {
+    width: 36px;
+    height: 36px;
+}
+
+/* Portada */
+.intro {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    height: 100svh;
+    background-size: cover;
+    background-position: center center;
+}
+
+.intro .abrir {
+    margin-bottom: max(8%, env(safe-area-inset-bottom));
+    font-size: clamp(.58rem, 2.5vw, .72rem);
+}
+
+/* Modal */
+.modal {
+    padding: 16px;
+}
+
+.modal > div {
+    width: 100%;
+    max-width: 340px;
+}
+
+/* ==========================================
+   IPHONE 6S Y CELULARES PEQUEÑOS
+   ========================================== */
+
+@media screen and (max-width: 375px) {
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .big-year {
+        font-size: 5.8rem;
+    }
+
+    .hero-foto {
+        margin-left: 10px;
+        margin-right: 5px;
+        border-radius: 145px 145px 10px 10px;
+    }
+
+    .hero-name h1 {
+        font-size: clamp(2.8rem, 14vw, 4rem);
+    }
+
+    .cita-s blockquote {
+        font-size: 1.3rem;
+    }
+
+    .prow div {
+        font-size: 1.05rem;
+    }
+
+    .tk-top {
+        padding: 17px 10px;
+    }
+
+    .tk-top h3 {
+        font-size: 1.35rem;
+    }
+
+    .pols {
+        height: 440px;
+    }
+
+    .p1 {
+        width: 55%;
+        height: 43%;
+    }
+
+    .p2 {
+        width: 49%;
+        height: 41%;
+    }
+
+    .p3 {
+        width: 53%;
+        height: 43%;
+        top: 53%;
+    }
+
+    .dock {
+        padding: 7px;
+    }
+
+    .dk-t {
+        margin: 0 7px;
+    }
+
+    .dk-t b {
+        font-size: .48rem;
+        letter-spacing: .12em;
+    }
+
+}
+
+/* ==========================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================== */
+
+@media screen and (max-width: 320px) {
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero-name h1 {
+        font-size: 2.7rem;
+    }
+
+    .big-year {
+        font-size: 5.2rem;
+    }
+
+    .tk-top .ci {
+        width: 38px;
+        height: 38px;
+    }
+
+    .tk-top h3 {
+        font-size: 1.2rem;
+    }
+
+    .cg div {
+        font-size: 1.55rem;
+    }
+
+    .pols {
+        height: 410px;
+    }
+
+}
+
+/* ==========================================
+   TABLETS Y COMPUTADORAS
+   ========================================== */
+
+@media screen and (min-width: 501px) {
+
+    body {
+        background: var(--c3);
+    }
+
+    .web {
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 0 45px rgba(20,50,75,.15);
+    }
+
+    .intro {
+        background-position: center center;
+    }
+
+}
+
+/* Pantallas con poca altura */
+@media screen and (max-height: 600px) and (max-width: 500px) {
+
+    .hero {
+        min-height: 600px;
+        min-height: 100svh;
+    }
+
+    .big-year {
+        font-size: 5.5rem;
+        margin-top: 10px;
+    }
+
+    .hero-foto {
+        min-height: 230px;
+    }
+
+    .hero-name {
+        margin-top: -60px;
+    }
+
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 </style>
 </head>
 <body class="bloq">
